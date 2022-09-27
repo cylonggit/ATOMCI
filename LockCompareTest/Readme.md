@@ -8,6 +8,9 @@ pip install mysql-connector
 ```
 
 ## Configuration
+Before you can start running tests, you need to complete the configuration first.
+
+
 1. All the configuration is at the front of the code in file lockTest.py.
 
 2. database initialization

@@ -5,6 +5,8 @@
 
 
 ## Configuration
+Before you can start running tests, you need to complete the configuration first.
+
 1. The Ethereum business chain configuration file is Ethbusiness.properties. The basechain configuration file is BaseChian.properties. 
 
 2. Configuration for Fabric: (1) Member MSP is specified in folder crypto-config and the network is specified in connection.json. (2) the chain-code name is specified in Fabric.Properties (if test the NFT example, the chain-code name is specified in FabricNFT.properties).
