@@ -34,7 +34,7 @@ CREATE TABLE `locktest` (
 
 ## Experiment and Results
 
-1. Running the lockTest.py can automatically run the lock-compare experiment in the paper.
+1. Running the lockTest.py can run the lock-compare experiment in the paper.
 
 2. Use the following SQL code to get the results. Due to network, hardware and other reasons, they may be slightly different from the results in the paper.
 

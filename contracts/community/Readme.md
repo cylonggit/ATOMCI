@@ -1,0 +1,3 @@
+1. CorssCommunity.sol is the cross-chain community contract
+
+2. ServContract.sol is a service contract template. The server deploys different service contracts for different cross-chain dApps by directly calling the createServContract function in the Cross-chain Community contract. After creating the service contract, the server can modify some variables in the newly deployed service contract and then show it to the dApp provider to confirm it.
