@@ -9,7 +9,8 @@ import jnr.ffi.annotations.Out;
 public class TestNFTCrossChain {
 
     public static void main(String[] args) throws Exception {
-        int testRound=50;
+        //int testRound=50;
+        int testRound=1;
         for(int i=1;i<=testRound;i++) {
             System.out.println();
             System.out.println();

@@ -7,9 +7,9 @@
 ## Configuration
 1. The Ethereum business chain configuration file is Ethbusiness.properties. The basechain configuration file is BaseChian.properties. 
 
-2. Configuration for Fabric: (1) Member MSP is specified in folder crypto-config and the network is specified in connection.json. (2) the chain code name is specified in Fabric.Properties.
+2. Configuration for Fabric: (1) Member MSP is specified in folder crypto-config and the network is specified in connection.json. (2) the chain-code name is specified in Fabric.Properties (if test the NFT example, the chain-code name is specified in FabricNFT.properties).
 
-3. We use MySQL database to record the experiment results, the config file is dbconfig.properties.
+3. We use MySQL database to record the experiment results, please specify the database configuration in dbconfig.properties.
    The database is initialized as follows:
 ```sql
    CREATE DATABASE /*!32312 IF NOT EXISTS*/`chen` /*!40100 DEFAULT CHARACTER SET utf8 */;
@@ -31,9 +31,9 @@
 ```
 ## Experiment and Example
 
-1. Running the TestDAPPs.java can automatically run the cross-chain delay and gas consumption experiments in the paper.
+1. Running the TestDAPPs.java can run the cross-chain delay and gas consumption experiments in the paper.
 
-2. Running the TestNFTCrossChain.java can automatically run the cross-chain NFT dApp example (transfer the NFT from one chain to another) in the paper.
+2. Running the TestNFTCrossChain.java can run the cross-chain NFT dApp example (transfer the NFT from one chain to another) in the paper.
 
 3. Use the following SQL code to get the experiment results. Due to network, hardware and other reasons, they may be slightly different from the results in the paper.
 
