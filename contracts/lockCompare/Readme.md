@@ -1,1 +1,1 @@
-1. lockCompareTestBusiness.sol implements resource lock and contract lock in one contract, and is used in the test to compare the two locks by the LockCompareTest project in the upper directory.
+1. lockCompareTestBusiness.sol implements resource lock and contract lock in one contract, and is used in the test to compare the two locks by the LockCompareTest project.
