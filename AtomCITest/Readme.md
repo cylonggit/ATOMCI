@@ -33,7 +33,9 @@
 
 1. Running the TestDAPPs.java can automatically run the cross-chain delay and gas consumption experiments in the paper.
 
-2. Use the following SQL code to get the results. Due to network, hardware and other reasons, they may be slightly different from the results in the paper.
+2. Running the TestNFTCrossChain.java can automatically run the cross-chain NFT dApp example in the paper.
+
+3. Use the following SQL code to get the experiment results. Due to network, hardware and other reasons, they may be slightly different from the results in the paper.
 
 ```sql
 -- ----------------------- DApp 1: atomic-ReadEth_write_2
@@ -68,7 +70,7 @@ SELECT a.`remark`, AVG(gas) gas FROM lablog a WHERE labType='atomic-write_2' GRO
 
 ```
 
-3. Running the TestNFTCrossChain.java can automatically run the cross-chain NFT dApp example in the paper.
+
 
 
 
