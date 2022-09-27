@@ -1,7 +1,7 @@
 # Latency and Gas Consumption Experiments and Cross-chian NFT Test Project
 
 1. The application is based on Fabric version V2.2.0 and Ethereum version 1.9.x
-2. The application is based on a custom Fabric SDK: Fabric -gateway-java-chen. Before running the application, please first package the SDK into your local Maven repository.
+2. The application is based on a custom Fabric SDK: Fabric -gateway-java-chen. Before running the application, please first package the SDK (in the dependent tools folder in the upper directory) into your local Maven repository.
 
 
 ## Configuration
