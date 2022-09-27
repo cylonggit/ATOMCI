@@ -12,6 +12,22 @@ false = False
 contractABI = {
     "abi": [
     {
+        "constant":true,
+        "inputs":[
+
+        ],
+        "name":"creator",
+        "outputs":[
+            {
+                "name":"",
+                "type":"address"
+            }
+        ],
+        "payable":false,
+        "stateMutability":"view",
+        "type":"function"
+    },
+    {
         "constant":false,
         "inputs":[
             {
@@ -105,6 +121,22 @@ contractABI = {
         ],
         "payable":false,
         "stateMutability":"pure",
+        "type":"function"
+    },
+    {
+        "constant":true,
+        "inputs":[
+
+        ],
+        "name":"invokeID",
+        "outputs":[
+            {
+                "name":"",
+                "type":"uint256"
+            }
+        ],
+        "payable":false,
+        "stateMutability":"view",
         "type":"function"
     },
     {
@@ -303,6 +335,37 @@ contractABI = {
         "constant":false,
         "inputs":[
             {
+                "name":"_assetID",
+                "type":"string"
+            },
+            {
+                "name":"_invokeId",
+                "type":"string"
+            }
+        ],
+        "name":"getAsset_atomic",
+        "outputs":[
+            {
+                "name":"",
+                "type":"uint256"
+            },
+            {
+                "name":"",
+                "type":"bool"
+            },
+            {
+                "name":"",
+                "type":"string"
+            }
+        ],
+        "payable":false,
+        "stateMutability":"nonpayable",
+        "type":"function"
+    },
+    {
+        "constant":false,
+        "inputs":[
+            {
                 "name":"_num",
                 "type":"uint256"
             }
@@ -312,6 +375,29 @@ contractABI = {
             {
                 "name":"",
                 "type":"bool"
+            }
+        ],
+        "payable":false,
+        "stateMutability":"nonpayable",
+        "type":"function"
+    },
+    {
+        "constant":false,
+        "inputs":[
+            {
+                "name":"_assetId",
+                "type":"string"
+            },
+            {
+                "name":"_invokeId",
+                "type":"string"
+            }
+        ],
+        "name":"getNumber_atomic",
+        "outputs":[
+            {
+                "name":"",
+                "type":"uint256"
             }
         ],
         "payable":false,
@@ -389,53 +475,6 @@ contractABI = {
         ],
         "payable":false,
         "stateMutability":"pure",
-        "type":"function"
-    },
-    {
-        "constant":false,
-        "inputs":[
-            {
-                "name":"_assetID",
-                "type":"string"
-            },
-            {
-                "name":"_invokeId",
-                "type":"string"
-            }
-        ],
-        "name":"getAsset",
-        "outputs":[
-            {
-                "name":"",
-                "type":"uint256"
-            },
-            {
-                "name":"",
-                "type":"bool"
-            },
-            {
-                "name":"",
-                "type":"string"
-            }
-        ],
-        "payable":false,
-        "stateMutability":"nonpayable",
-        "type":"function"
-    },
-    {
-        "constant":true,
-        "inputs":[
-
-        ],
-        "name":"invodeID",
-        "outputs":[
-            {
-                "name":"",
-                "type":"uint256"
-            }
-        ],
-        "payable":false,
-        "stateMutability":"view",
         "type":"function"
     },
     {
@@ -612,6 +651,25 @@ contractABI = {
         "constant":true,
         "inputs":[
             {
+                "name":"_assetId",
+                "type":"string"
+            }
+        ],
+        "name":"getNumber",
+        "outputs":[
+            {
+                "name":"",
+                "type":"uint256"
+            }
+        ],
+        "payable":false,
+        "stateMutability":"view",
+        "type":"function"
+    },
+    {
+        "constant":true,
+        "inputs":[
+            {
                 "name":"i",
                 "type":"uint256"
             }
@@ -625,6 +683,22 @@ contractABI = {
         ],
         "payable":false,
         "stateMutability":"pure",
+        "type":"function"
+    },
+    {
+        "constant":false,
+        "inputs":[
+            {
+                "name":"_server",
+                "type":"address"
+            }
+        ],
+        "name":"setServer",
+        "outputs":[
+
+        ],
+        "payable":false,
+        "stateMutability":"nonpayable",
         "type":"function"
     },
     {
@@ -675,6 +749,22 @@ contractABI = {
         ],
         "payable":false,
         "stateMutability":"nonpayable",
+        "type":"function"
+    },
+    {
+        "constant":true,
+        "inputs":[
+
+        ],
+        "name":"server",
+        "outputs":[
+            {
+                "name":"",
+                "type":"address"
+            }
+        ],
+        "payable":false,
+        "stateMutability":"view",
         "type":"function"
     },
     {
@@ -757,6 +847,28 @@ contractABI = {
             },
             {
                 "indexed":false,
+                "name":"num",
+                "type":"uint256"
+            }
+        ],
+        "name":"GetNumber",
+        "type":"event"
+    },
+    {
+        "anonymous":false,
+        "inputs":[
+            {
+                "indexed":false,
+                "name":"invokeId",
+                "type":"string"
+            },
+            {
+                "indexed":false,
+                "name":"assetId",
+                "type":"string"
+            },
+            {
+                "indexed":false,
                 "name":"total",
                 "type":"uint256"
             }
@@ -764,14 +876,13 @@ contractABI = {
         "name":"ReadAsset",
         "type":"event"
     }
-],
-    "address": "0x116c19A3a4Ba17011f267fA27065d7F44e808D18"  # 合约地址
+]
 }
 # blockchain rpc
 w3 = Web3(Web3.HTTPProvider("http://192.168.17.131:8545"))
 w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 # contract
-contractAddr = '0x4ff4DDd668d6530BEb09B2dE873B3CAbfefc14B4'
+contractAddr = '0x6c6a303b4B5B92b4227Aa767ea6c9bAf4a09919a'
 contractInstance = w3.eth.contract(address=contractAddr, abi=contractABI['abi'])
 # database
 mydb = mysql.connector.connect(
