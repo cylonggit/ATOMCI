@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ATOMCI.iml" filepath="$PROJECT_DIR$/ATOMCI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DeploySmartContract.iml" filepath="$PROJECT_DIR$/.idea/DeploySmartContract.iml" />
     </modules>
   </component>
 </project>
