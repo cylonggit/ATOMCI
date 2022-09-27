@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.crossTest.mybatis.TestMapper">
+    <!--
+        namespace ：名称空间；指定接口的全类名
+        id：唯一标识（建议用接口中对应的方法名命名）
+        resultType：返回值类型
+    -->
+    <select id="queryAll" resultType="com.chen.crossTest.pojo.Test">
+        select * from test
+    </select>
+    <!--
+          自增主键值的获取，mybatis也是利用statement.getGeneratedKeys();
+          useGeneratedKeys="true";使用自增获取主键值策略
+          keyProperty：指定对应的主键值，也就是mybatis获取到主键值以后，将这个值封装给javaBean的哪个属性
+    -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into test(myname,start,end) values(#{myname},#{start,jdbcType=TIMESTAMP},#{end,jdbcType=TIMESTAMP})
+    </insert>
+    <!-- 根据name修改password的值 -->
+    <update id="update">
+        update test set myname=#{myname} where name=#{name}
+    </update>
+    <delete id="deleteById">
+        delete from test where id=#{id}
+    </delete>
+</mapper>

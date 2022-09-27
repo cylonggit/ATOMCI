@@ -1,0 +1,59 @@
+//java里通过签名拿回pubKey方法从而验证签名，相当于合约中的ecrecover方法
+        String pubKey = Sign.signedMessageToKey(hexMessage, signatureData).toString(16);
+        String signerAddress = Keys.getAddress(pubKey);
+        System.out.println("recover pubKey by java: 0x"+ signerAddress);
+
+
+// https://mvnrepository.com/artifact/org.web3j/core
+implementation group: 'org.web3j', name: 'core', version: '3.2.0'
+
+
+        bytes32 r;
+        bytes32 s;
+        uint8 v;
+    
+        // Check the signature length
+        if (_signature.length != 65) {
+          return (address(0));
+        }
+    
+        // Divide the signature in r, s and v variables with inline assembly.
+        assembly {
+          r := mload(add(_signature, 0x20))
+          s := mload(add(_signature, 0x40))
+          v := byte(0, mload(add(_signature, 0x60)))
+        }
+    
+        // Version of signature should be 27 or 28, but 0 and 1 are also possible versions
+        if (v < 27) {
+          v += 27;
+        }
+    
+        // If the version is correct return the signer address
+        if (v != 27 && v != 28) {
+          return (address(0));
+        } else {
+          // solium-disable-next-line arg-overflow
+          return ecrecover(_msgHash, v, r, s);
+        }
+
+ //--------------以下两种方法是通过调用合约去验证签名---------------------------------
+        byte[] r = signatureData.getR();
+        byte[] s = signatureData.getS();
+        byte byte_v = signatureData.getV();
+
+        //方法一 把r、s、v弄成一个byte[]作为参数传到合约，在合约内再分开
+        byte[] signMessage = new byte[r.length + r.length + 1];
+        System.arraycopy(r, 0, signMessage, 0, r.length);
+        System.arraycopy(s, 0, signMessage, r.length, s.length);
+        signMessage[r.length + s.length] = byte_v;
+
+
+897a792665e48d1caaed5cea50f396b8a77d6650
+
+        0x3B9eD344D2885d33dD8C3D2411411dF94ab8E824
+
+
+        byte[] ss = sStr.getBytes( Charset.forName("ISO-8859-1"));
+            byte[] rr = rStr.getBytes( Charset.forName("ISO-8859-1"));
+            byte byte_v_l = vStr.getBytes( Charset.forName("ISO-8859-1"))[0];
