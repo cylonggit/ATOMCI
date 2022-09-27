@@ -1,4 +1,4 @@
-# Latency and Gas Consumption Test Project
+# Latency and Gas Consumption Experiments and Cross-chian NFT Test Project
 
 1. The application is based on Fabric version V2.2.0 and Ethereum version 1.9.x
 2. The application is based on a custom Fabric SDK: Fabric -gateway-java-chen. Before running the application, please first package the SDK into your local Maven repository.
@@ -29,11 +29,11 @@
    ) ENGINE=INNODB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='resultList';
 
 ```
-## Experiment and Example
+## Run Experiments and NFT Example
 
 1. Running the TestDAPPs.java can run the cross-chain delay and gas consumption experiments in the paper.
 
-2. Running the TestNFTCrossChain.java can run the cross-chain NFT dApp example (transfer the NFT from one chain to another) in the paper.
+2. Running the TestNFTCrossChain.java can run the cross-chain NFT dApp example (transfer the NFT from one blockchain to another).
 
 3. Use the following SQL code to get the experiment results. Due to network, hardware and other reasons, they may be slightly different from the results in the paper.
 
