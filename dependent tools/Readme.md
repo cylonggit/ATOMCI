@@ -2,4 +2,4 @@
 
 2. Use: ``` mvn clean install -Dmaven.test.skip=true ``` to build the projects.
 
-3First install the fabric-sdk-java-2.2.2. Then install the fabric-gateway-java-2.2.2. 
+3. First install the project fabric-sdk-java-2.2.2. Then install the project fabric-gateway-java-2.2.2. 
